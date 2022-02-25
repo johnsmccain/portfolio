@@ -1,5 +1,5 @@
 import about01 from "../assets/about01.png";
-import about02 from "../assets/about01.png";
+import about02 from "../assets/about02.png";
 import about03 from "../assets/about03.png";
 import about04 from "../assets/about04.png";
 import adidas from "../assets/adidas.png";
@@ -19,7 +19,7 @@ import graphql from "../assets/graphql.png";
 import html from "../assets/html.png";
 import javascript from "../assets/javascript.png";
 import logo from "../assets/logo.png";
-import logoSvg from "../assets/logo.svg";
+
 import mobile from "../assets/mobile.png";
 import mu5 from "../assets/mu5.png";
 import nb from "../assets/nb.png";
@@ -64,7 +64,7 @@ export default {
   html,
   javascript,
   logo,
-  logoSvg,
+
   mobile,
   mu5,
   nb,

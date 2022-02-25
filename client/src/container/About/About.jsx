@@ -1,39 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { client } from "../../../client";
+import { client, urlFor } from "../../client";
 import "./About.scss";
-import images from "../../constant/images";
-// import { Wrapper } from "../../wrapper";
 
-const about = [
-  {
-    title: "web developer",
-    description: "i build things that live on the web",
-    image: images.about01,
-  },
-  {
-    title: "frontend developer",
-    description: "i build things that live on the web",
-    image: images.about02,
-  },
-  {
-    title: "backend developer",
-    description: "i build things that live on the web",
-    image: images.about03,
-  },
-  {
-    title: "full-stack developer",
-    description: "i build things that live on the web",
-    image: images.about04,
-  },
-];
+import { Wrapper } from "../../wrapper";
+
+// const about = [
+//   {
+//     title: "web developer",
+//     description: "i build things that live on the web",
+//     image: images.about01,
+//   },
+//   {
+//     title: "frontend developer",
+//     description: "i build things that live on the web",
+//     image: images.about02,
+//   },
+//   {
+//     title: "backend developer",
+//     description: "i build things that live on the web",
+//     image: images.about03,
+//   },
+//   {
+//     title: "full-stack developer",
+//     description: "i build things that live on the web",
+//     image: images.about04,
+//   },
+// ];
 const About = () => {
-  //   const [about, setAbout] = useState([]);
+  const [abouts, setAbouts] = useState([]);
 
-  //   useEffect(() => {
-  //     const query = '*[_type == "about"]';
-  //     client.fetch(query).then((date) => setAbout(data));
-  // }, []);
+  useEffect(() => {
+    const query = '*[_type == "about"]';
+    client.fetch(query).then((data) => setAbouts(data));
+  }, []);
   return (
     <div className="about">
       <h2 className="about-heading">
@@ -44,7 +44,7 @@ const About = () => {
         means <span>Good Business</span>
       </h2>
       <div className="about__container">
-        {about.map((item, id) => (
+        {abouts.map((item, id) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -52,8 +52,9 @@ const About = () => {
             className="about__container__card"
             key={item.title + id}
           >
+            {/* {console.log(item.imageUrl)} */}
             <img
-              src={item.image}
+              src={urlFor(item.imageUrl)}
               alt={item.title}
               className="about__container__card-img"
             />
@@ -70,4 +71,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Wrapper(About, "about");

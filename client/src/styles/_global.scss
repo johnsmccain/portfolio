@@ -1,0 +1,67 @@
+@import "./variables";
+
+.head-text {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: $black-color;
+  text-transform: capitalize;
+
+  span {
+    color: $secondary-color;
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: $gray-color;
+  line-height: 1.5;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem;
+  }
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.bold-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
+.btn {
+  cursor: pointer;
+  font-size: 20px;
+}
+img {
+  width: 100%;
+}

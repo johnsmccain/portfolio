@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import { motion } from "framer-motion";
 import images from "../../constant/images";
+import { Wrapper } from "../../wrapper";
 const scaleVarients = {
   whileInView: {
     scale: [0, 1],
@@ -14,7 +15,7 @@ const scaleVarients = {
 };
 const Header = () => {
   return (
-    <header className="header ">
+    <header id="header" className="header">
       <motion.div
         className="header__info"
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -39,7 +40,11 @@ const Header = () => {
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
       >
-        <img src={images.johnsdanlami} alt="" className="header__profile-image" />
+        <img
+          src={images.johnsdanlami}
+          alt=""
+          className="header__profile-image"
+        />
         <motion.img
           src={images.circle}
           whileInView={{ scale: [0, 1] }}
@@ -53,7 +58,7 @@ const Header = () => {
         className="header__circles"
       >
         {[images.flutter, images.redux, images.sass].map((img, id) => (
-          <div className="header__circles__cmp">
+          <div className="header__circles__cmp" key={id}>
             <img src={img} alt="cicle" className="header__circles__cmp-img" />
           </div>
         ))}
@@ -62,4 +67,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Wrapper(Header, "header");
